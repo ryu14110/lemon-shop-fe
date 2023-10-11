@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import { apiClient } from "../utils/apiClient";
+import "../styles/main.css";
 
+// 상품 목록 호출 함수
 const getProductList = () => {
   return apiClient({
     url: "/products",
-    method: "GET",
-    // baseURL: "http://localhost:4000",
   });
 };
+
 function ProductList() {
   const [productList, setProductList] = useState();
 
@@ -16,24 +17,20 @@ function ProductList() {
       const products = await getProductList();
       setProductList(products);
     })();
-  });
+  }, []);
 
   console.log(productList);
   return (
     <>
       {productList && (
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
+        <div className="products">
           {productList.map((product) => {
             return (
               <div key={product.id}>
                 <img
+                  className="product"
                   src={product.images[0]}
                   alt={product.title}
-                  style={{
-                    width: "300px",
-                    height: "300px",
-                    border: "1px solid red",
-                  }}
                 />
               </div>
             );
