@@ -601,21 +601,23 @@ function ProductList() {
   const [productList, setProductList] = useState(dummyData);
   return (
     <>
-      {productList && (
-        <div className="products">
-          {productList.map((product) => {
-            return (
-              <div key={product.id}>
-                <img
-                  className="product"
-                  src={product.images[0]}
-                  alt={product.title}
-                />
-              </div>
-            );
-          })}
-        </div>
-      )}
+      <body>
+        {productList && (
+          <div className="products">
+            {productList.map((product) => {
+              return (
+                <div key={product.id}>
+                  <img
+                    className="product"
+                    src={product.images[0]}
+                    alt={product.title}
+                  />
+                </div>
+              );
+            })}
+          </div>
+        )}
+      </body>
     </>
   );
 }
