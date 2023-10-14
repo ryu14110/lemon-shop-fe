@@ -1,70 +1,15 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+(여기 있는 README파일은 추후에 변경될 예정입니다.) test
+안녕하세요. 저희 이경진, 류재화, 신민지, 조대근, 임태욱 다섯 명의 팀원들이 협력하여 쇼핑몰 홈페이지를 만드는 것을 목표로 합니다. https://www.stickylemon.nl/ 여기 웹사이트를 참조하는 것이나 기능적인 부분, 데이터, 레이아웃 등은 저희가 직접 제작하고 수정합니다.
 
-## Available Scripts
+고객에게 제품을 소개하고 판매하는 기능을 갖춘 쇼핑몰 홈페이지 구축, 웹 디자인 및 사용자 경험 개선을 통한 고객 유입 및 구매율 향상, 상품 관리 및 주문 처리를 위한 관리자 페이지를 개발하는 것에 중점을 맞춥니다.
 
-In the project directory, you can run:
+감사합니다.
 
-### `npm start`
+We are creating a new website inspried by https://www.stickylemon.nl/ .
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The purpose of this team project is to use the latest languages and gain the new skills to be a full-stack developer/web developer. Since we were taking a courses from Bootcamp to be one of them. It's the first time to make our own website for all of us which we put our efforts and pour our skills from the courses.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Trying to make the layout as same as the website using Grid/Flexbox. Collecting and storing the database along with users.
+Using OAuth for the user to login easy without giving us the passwords.
+Creating routes to pass a data or set the state in the Link component and make sure it from the react-router-dom library.
