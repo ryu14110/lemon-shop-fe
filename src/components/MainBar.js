@@ -14,7 +14,7 @@ export default function MainBar() {
         <header>
           free shipping above € 100 in the Netherlands
           <button>shopping cart</button>
-          <button>log in</button>
+          <button>sign in</button>
         </header>
       </div>
       <h1>sticky lemon</h1>
