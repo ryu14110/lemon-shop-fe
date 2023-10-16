@@ -1,25 +1,21 @@
-import ProductList from "./components/ProductList";
-import MainBar from "./components/MainBar";
-import Footer from "./components/Footer";
-import Sidebar from "./components/Sidebar";
-import axios from "axios";
+import { Route, Routes } from 'react-router-dom';
+import CartPage from './pages/CartPage';
+import DeliveryPage from './pages/DeliveryPage';
+import ItemsPage from './pages/ItemsPage';
+import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
+import MainPage from './pages/MainPage';
 
-function App() {
-  const shopAll = () => {
-    alert("selectAll");
-    axios.get("/movies");
-  };
-
+const App = () => {
   return (
-    <>
-      <button className="shopall" onClick={shopAll}>
-        버튼클릭
-      </button>
-      <MainBar />
-      <Sidebar />
-      <ProductList />
-      <Footer />
-    </>
+    <Routes>
+      <Route path="/main" element={<MainPage />} />
+      <Route path="/items/:itemId" element={<ItemsPage />} />
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/register" element={<RegisterPage />} />
+      <Route path="/cart" element={<CartPage />} />
+      <Route path="/delivery" element={<DeliveryPage />} />
+    </Routes>
   );
-}
+};
 export default App;
