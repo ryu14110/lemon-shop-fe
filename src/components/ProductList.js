@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import { apiClient } from "../utils/apiClient";
 import "../styles/main.css";
-
+//useEffect넣기
 const dummyData = [
   {
     id: 1,
@@ -586,18 +586,18 @@ const getProductList = () => {
 };
 
 function ProductList() {
-  /** 서버와 통신
-  const [productList, setProductList] = useState();
+  //  서버와 통신
+  // const [productList, setProductList] = useState();
 
-  useEffect(() => {
-    (async () => {
-      const products = await getProductList();
-      setProductList(products);
-    })();
-  }, []);
+  // useEffect(() => {
+  //   (async () => {
+  //     const products = await getProductList();
+  //     setProductList(products);
+  //   })();
+  // }, []);
 
-  console.log(productList);
-   */
+  // console.log(productList);
+
   const [productList, setProductList] = useState(dummyData);
   return (
     <>
