@@ -4,7 +4,7 @@ export default function Sidebar() {
       <aside>
         <ul>
           <li>
-            <button>shop all</button>
+            <button>shop all-sidebar</button>
           </li>
         </ul>
       </aside>
