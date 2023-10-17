@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { apiClient } from "../utils/apiClient";
-import "../styles/main.css";
+import { apiClient } from "../../utils/apiClient";
+import "../../lib/styles/main.css";
 
 const dummyData = [
   {
