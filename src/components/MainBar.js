@@ -40,10 +40,7 @@ export default function MainBar() {
         <ButtonsStyle>
           <CartStyle to="/cart">shopping cart</CartStyle>
           <CartStyle to="register">
-            <div>
-              Log in
-              {/* <Dropdown /> */}
-            </div>
+            <div>log in{/* <Dropdown /> */}</div>
           </CartStyle>
         </ButtonsStyle>
       </Container>

@@ -605,11 +605,17 @@ function ProductList() {
         {productList && (
           <div className="products">
             <div>
-              <ul>
-                <li>
-                  <button>shop all-sidebar</button>
-                </li>
-              </ul>
+              Catergory
+              <span>
+                <ul>
+                  <li className="categories">
+                    <button>shop all-sidebar</button>
+                    <button>bags - sidebar</button>
+                    <button>footwear - sidebar</button>
+                    <button>accessories - sidebar</button>
+                  </li>
+                </ul>
+              </span>
             </div>
             {productList.map((product) => {
               return (
