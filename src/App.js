@@ -9,7 +9,7 @@ import MainPage from './pages/MainPage';
 const App = () => {
   return (
     <Routes>
-      <Route path="/main" element={<MainPage />} />
+      <Route path="/" element={<MainPage />} />
       <Route path="/items/:itemId" element={<ItemsPage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />

@@ -1,10 +1,11 @@
-import Button from "../components/common/Button"
+import MainBar from "../components/MainBar";
+import ItemContent from "../components/MainBar";
 
 const ItemsPage = () => {
   return (
     <div>
-      상품상세
-      <Button>버튼</Button>
+      <MainBar />
+      <ItemContent />
     </div>
   );
 };
