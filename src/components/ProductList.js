@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { apiClient } from '../utils/apiClient';
 import '../styles/main.css';
+import { Link } from 'react-router-dom';
 //useEffect넣기
 const dummyData = [
   {
@@ -609,10 +610,10 @@ function ProductList() {
               <span>
                 <ul>
                   <li className="categories">
-                    <button>shop all-sidebar</button>
-                    <button>bags - sidebar</button>
-                    <button>footwear - sidebar</button>
-                    <button>accessories - sidebar</button>
+                    <Link to="/">shop all-sidebar</Link>
+                    <Link to="/items/:itemId">bags - sidebar</Link>
+                    <Link to="/items/:itemId">footwear - sidebar</Link>
+                    <Link to="/items/:itemId">accessories - sidebar</Link>
                   </li>
                 </ul>
               </span>
