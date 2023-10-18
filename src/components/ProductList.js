@@ -605,18 +605,32 @@ function ProductList() {
       <body>
         {productList && (
           <div className="products">
-            <div>
+            <div className="categories">
               Catergory
-              <span>
-                <ul>
-                  <li className="categories">
-                    <Link to="/">shop all-sidebar</Link>
-                    <Link to="/items/:itemId">bags - sidebar</Link>
-                    <Link to="/items/:itemId">footwear - sidebar</Link>
-                    <Link to="/items/:itemId">accessories - sidebar</Link>
+              <nav>
+                <ul className="orderlists">
+                  <li>
+                    <Link to="/" className="listitems">
+                      shop all
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/items/:itemId" className="listitems">
+                      bags
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/items/:itemId" className="listitems">
+                      footwear
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/items/:itemId" className="listitems">
+                      accessories
+                    </Link>
                   </li>
                 </ul>
-              </span>
+              </nav>
             </div>
             {productList.map((product) => {
               return (
