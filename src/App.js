@@ -1,4 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 import CartPage from './pages/CartPage';
 import DeliveryPage from './pages/DeliveryPage';
 import ItemsPage from './pages/ItemsPage';
@@ -7,18 +9,24 @@ import RegisterPage from './pages/RegisterPage';
 import MainPage from './pages/MainPage';
 
 const App = () => {
-  const selectAll = async () => {
-    //async와 await로 비동기 지원
-    alert("selectAll!");
-    const result = await axios.get("/user");
-    //http://localhost:4000/user인 서버에 데이터를 요청한다. 이 설정은 package.json의 proxy설정에 있음
-    //요청한 데이터가 도착하면 result에 담는다.
-    console.log(result);
-  };
+  const [itemInfo, setItemInfo] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const result = await axios.get('/');
+        setItemInfo(result.data);
+      } catch (error) {
+        console.error('데이터를 가져오는 중 오류가 발생했습니다.');
+      }
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <Routes>
-      <Route path="/" element={<MainPage data={result} />} />
+      <Route path="/" element={<MainPage data={itemInfo} />} />
       <Route path="/items/:itemId" element={<ItemsPage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
@@ -27,4 +35,5 @@ const App = () => {
     </Routes>
   );
 };
+
 export default App;
