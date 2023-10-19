@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
 import { apiClient } from '../utils/apiClient';
 import '../styles/main.css';
+import Sidebar from './Sidebar';
 import { Link } from 'react-router-dom';
-//useEffect넣기
+import { useNavigate } from '../../node_modules/react-router-dom/dist/index';
+
 const dummyData = [
   {
     id: 1,
@@ -600,6 +602,12 @@ function ProductList() {
   // console.log(productList);
 
   const [productList, setProductList] = useState(dummyData);
+
+  // const navigate = useNavigate();
+  // function handleClickItem(itemId) {
+  //   navigate(`/product?category=${groceries}`);
+  // }
+
   return (
     <>
       <body>
@@ -607,39 +615,20 @@ function ProductList() {
           <div className="products">
             <div className="categories">
               Catergory
-              <nav>
-                <ul className="orderlists">
-                  <li>
-                    <Link to="/" className="listitems">
-                      shop all
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/bags" className="listitems">
-                      bags
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/footwear" className="listitems">
-                      footwear
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/accessories" className="listitems">
-                      accessories
-                    </Link>
-                  </li>
-                </ul>
-              </nav>
+              <Sidebar />
             </div>
+
             {productList.map((product) => {
               return (
                 <div key={product.id}>
-                  <img
-                    className="product"
-                    src={product.images[0]}
-                    alt={product.title}
-                  />
+                  <Link to={`/product/${product.id}`}>
+                    <img
+                      className="product"
+                      src={product.images[0]}
+                      alt={product.title}
+                    />
+                    <h2>{product.title}</h2>
+                  </Link>
                 </div>
               );
             })}

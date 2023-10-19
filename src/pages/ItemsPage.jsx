@@ -1,9 +1,67 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import MainBar from '../components/MainBar';
+import Sidebar from '../components/Sidebar';
 
 const dummyData = [
+  {
+    id: 11,
+    title: 'perfume Oil',
+    description:
+      'Mega Discount, Impression of Acqua Di Gio by GiorgioArmani concentrated attar perfume Oil',
+    price: 13,
+    discountPercentage: 8.4,
+    rating: 4.26,
+    stock: 65,
+    brand: 'Impression of Acqua Di Gio',
+    category: 'fragrances',
+    thumbnail: 'https://i.dummyjson.com/data/products/11/thumbnail.jpg',
+    images: [
+      'https://i.dummyjson.com/data/products/11/1.jpg',
+      'https://i.dummyjson.com/data/products/11/2.jpg',
+      'https://i.dummyjson.com/data/products/11/3.jpg',
+      'https://i.dummyjson.com/data/products/11/thumbnail.jpg',
+    ],
+  },
+  {
+    id: 12,
+    title: 'Brown Perfume',
+    description: 'Royal_Mirage Sport Brown Perfume for Men & Women - 120ml',
+    price: 40,
+    discountPercentage: 15.66,
+    rating: 4,
+    stock: 52,
+    brand: 'Royal_Mirage',
+    category: 'fragrances',
+    thumbnail: 'https://i.dummyjson.com/data/products/12/thumbnail.jpg',
+    images: [
+      'https://i.dummyjson.com/data/products/12/1.jpg',
+      'https://i.dummyjson.com/data/products/12/2.jpg',
+      'https://i.dummyjson.com/data/products/12/3.png',
+      'https://i.dummyjson.com/data/products/12/4.jpg',
+      'https://i.dummyjson.com/data/products/12/thumbnail.jpg',
+    ],
+  },
+  {
+    id: 13,
+    title: 'Fog Scent Xpressio Perfume',
+    description:
+      'Product details of Best Fog Scent Xpressio Perfume 100ml For Men cool long lasting perfumes for Men',
+    price: 13,
+    discountPercentage: 8.14,
+    rating: 4.59,
+    stock: 61,
+    brand: 'Fog Scent Xpressio',
+    category: 'fragrances',
+    thumbnail: 'https://i.dummyjson.com/data/products/13/thumbnail.webp',
+    images: [
+      'https://i.dummyjson.com/data/products/13/1.jpg',
+      'https://i.dummyjson.com/data/products/13/2.png',
+      'https://i.dummyjson.com/data/products/13/3.jpg',
+      'https://i.dummyjson.com/data/products/13/4.jpg',
+      'https://i.dummyjson.com/data/products/13/thumbnail.webp',
+    ],
+  },
   {
     id: 14,
     title: 'Non-Alcoholic Concentrated Perfume Oil',
@@ -336,54 +394,26 @@ const dummyData = [
   },
 ];
 
-export default function Footwear() {
+export default function ItemsPage() {
   const [productList, setProductList] = useState(dummyData);
   return (
     <>
       <MainBar />
+      <Sidebar />
       <body>
-        {productList && (
-          <div className="products">
-            <div className="categories">
-              Catergory
-              <nav>
-                <ul className="orderlists">
-                  <li>
-                    <Link to="/" className="listitems">
-                      shop all
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/bags" className="listitems">
-                      bags
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/footwear" className="listitems">
-                      footwear
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/accessories" className="listitems">
-                      accessories
-                    </Link>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-            {productList.map((product) => {
-              return (
-                <div key={product.id}>
-                  <img
-                    className="product"
-                    src={product.images[0]}
-                    alt={product.title}
-                  />
-                </div>
-              );
-            })}
-          </div>
-        )}
+        <div className="products">
+          {productList.map((product) => {
+            return (
+              <div key={product.id}>
+                <img
+                  className="product"
+                  src={product.images[0]}
+                  alt={product.title}
+                />
+              </div>
+            );
+          })}
+        </div>
       </body>
     </>
   );

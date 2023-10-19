@@ -53,7 +53,7 @@ export default function MainBar() {
         </OrderedList>
         <OrderedList>
           <li>
-            <StyledLink to="/bags">bags</StyledLink>
+            <StyledLink to="/itemspage">bags</StyledLink>
           </li>
         </OrderedList>
         <OrderedList>
