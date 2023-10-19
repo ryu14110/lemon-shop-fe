@@ -9,24 +9,10 @@ import RegisterPage from './pages/RegisterPage';
 import MainPage from './pages/MainPage';
 
 const App = () => {
-  const [itemInfo, setItemInfo] = useState(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const result = await axios.get('/');
-        setItemInfo(result.data);
-      } catch (error) {
-        console.error('데이터를 가져오는 중 오류가 발생했습니다.');
-      }
-    };
-
-    fetchData();
-  }, []);
 
   return (
     <Routes>
-      <Route path="/" element={<MainPage data={itemInfo} />} />
+      <Route path="/" element={<MainPage />} />
       <Route path="/items/:itemId" element={<ItemsPage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
