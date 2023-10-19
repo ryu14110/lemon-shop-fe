@@ -39,7 +39,7 @@ export default function MainBar() {
         <HeaderStyle>free shipping above € 100 in the Netherlands</HeaderStyle>
         <ButtonsStyle>
           <CartStyle to="/cart">shopping cart</CartStyle>
-          <CartStyle to="register">
+          <CartStyle to="/register">
             <div>log in{/* <Dropdown /> */}</div>
           </CartStyle>
         </ButtonsStyle>
@@ -53,17 +53,17 @@ export default function MainBar() {
         </OrderedList>
         <OrderedList>
           <li>
-            <StyledLink to="/items/:itemId">bags</StyledLink>
+            <StyledLink to="/bags">bags</StyledLink>
           </li>
         </OrderedList>
         <OrderedList>
           <li>
-            <StyledLink to="/items/:itemId">footwear</StyledLink>
+            <StyledLink to="/footwear">footwear</StyledLink>
           </li>
         </OrderedList>
         <OrderedList>
           <li>
-            <StyledLink to="/items/:itemId">accessories</StyledLink>
+            <StyledLink to="/Accessories">accessories</StyledLink>
           </li>
         </OrderedList>
       </NavStyle>

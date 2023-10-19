@@ -1,46 +1,9 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import MainBar from '../components/MainBar';
 
 const dummyData = [
-  {
-    id: 11,
-    title: 'perfume Oil',
-    description:
-      'Mega Discount, Impression of Acqua Di Gio by GiorgioArmani concentrated attar perfume Oil',
-    price: 13,
-    discountPercentage: 8.4,
-    rating: 4.26,
-    stock: 65,
-    brand: 'Impression of Acqua Di Gio',
-    category: 'fragrances',
-    thumbnail: 'https://i.dummyjson.com/data/products/11/thumbnail.jpg',
-    images: [
-      'https://i.dummyjson.com/data/products/11/1.jpg',
-      'https://i.dummyjson.com/data/products/11/2.jpg',
-      'https://i.dummyjson.com/data/products/11/3.jpg',
-      'https://i.dummyjson.com/data/products/11/thumbnail.jpg',
-    ],
-  },
-  {
-    id: 12,
-    title: 'Brown Perfume',
-    description: 'Royal_Mirage Sport Brown Perfume for Men & Women - 120ml',
-    price: 40,
-    discountPercentage: 15.66,
-    rating: 4,
-    stock: 52,
-    brand: 'Royal_Mirage',
-    category: 'fragrances',
-    thumbnail: 'https://i.dummyjson.com/data/products/12/thumbnail.jpg',
-    images: [
-      'https://i.dummyjson.com/data/products/12/1.jpg',
-      'https://i.dummyjson.com/data/products/12/2.jpg',
-      'https://i.dummyjson.com/data/products/12/3.png',
-      'https://i.dummyjson.com/data/products/12/4.jpg',
-      'https://i.dummyjson.com/data/products/12/thumbnail.jpg',
-    ],
-  },
   {
     id: 13,
     title: 'Fog Scent Xpressio Perfume',
@@ -393,7 +356,7 @@ const dummyData = [
   },
 ];
 
-export default function ItemsPage() {
+export default function Bags() {
   const [productList, setProductList] = useState(dummyData);
   return (
     <>
@@ -416,12 +379,12 @@ export default function ItemsPage() {
                     </Link>
                   </li>
                   <li>
-                    <Link to="/items/:itemId" className="listitems">
+                    <Link to="/footwear" className="listitems">
                       footwear
                     </Link>
                   </li>
                   <li>
-                    <Link to="/items/:itemId" className="listitems">
+                    <Link to="/accessories" className="listitems">
                       accessories
                     </Link>
                   </li>

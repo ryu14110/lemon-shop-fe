@@ -615,17 +615,17 @@ function ProductList() {
                     </Link>
                   </li>
                   <li>
-                    <Link to="/items/:itemId" className="listitems">
+                    <Link to="/bags" className="listitems">
                       bags
                     </Link>
                   </li>
                   <li>
-                    <Link to="/items/:itemId" className="listitems">
+                    <Link to="/footwear" className="listitems">
                       footwear
                     </Link>
                   </li>
                   <li>
-                    <Link to="/items/:itemId" className="listitems">
+                    <Link to="/accessories" className="listitems">
                       accessories
                     </Link>
                   </li>

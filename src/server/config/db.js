@@ -3,7 +3,8 @@ const db = mysql.createPool({
   host: "localhost",
   user: "root",
   password: "0000",
-  database: "react_project", //name of my project
+  database: "sticky_lemon",
+  port: 3306,
 });
 
 module.exports = db;
