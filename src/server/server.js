@@ -8,7 +8,7 @@ const db = require('./config/db.js');
 //app.use(cors());
 
 // http://localhost:4000/ 으로 접속 시 응답메시지 출력
-app.get('/', (req, res) => {
+app.get('/shopall', (req, res) => {
   //res.send(dummyData)
   console.log('root');
   db.query('SELECT * FROM sticky_lemon.items', (err, data) => {
