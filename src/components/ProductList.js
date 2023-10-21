@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { apiClient } from '../utils/apiClient';
 import '../lib/styles/main.css';
-import axios from 'axios';
 
 function ProductList() {
   //  서버와 통신
@@ -10,7 +9,7 @@ function ProductList() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const result = await axios.get('http://localhost:4000');
+        const result = await apiClient({ url: '/' });
         setItemInfo(result.data);
       } catch (error) {
         console.error('데이터를 가져오는 중 오류가 발생했습니다.');
@@ -19,7 +18,8 @@ function ProductList() {
 
     fetchData();
   }, []);
-  // console.log(productList);
+
+  console.log(itemInfo);
 
   return (
     <>
@@ -36,11 +36,9 @@ function ProductList() {
             {itemInfo.map((product) => {
               return (
                 <div key={product.id}>
-                  <img
-                    className="product"
-                    src={product.images[0]}
-                    alt={product.title}
-                  />
+                  <p>
+                    {product.id} + {product.name}
+                  </p>
                 </div>
               );
             })}
