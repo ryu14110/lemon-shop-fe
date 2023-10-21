@@ -3,9 +3,57 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 4000;
 const db = require('./config/db.js');
-const cors = require('cors');
+//const cors = require('cors');
 
-app.use(cors());
+//app.use(cors());
+
+// http://localhost:4000/ 으로 접속 시 응답메시지 출력
+app.get('/', (req, res) => {
+  //res.send(dummyData)
+  console.log('root');
+  db.query('SELECT * FROM sticky_lemon.items', (err, data) => {
+    if (!err) {
+      console.log(data);
+      res.send(data); //응답을 클라이언트에 보낸다.
+    } else {
+      console.log(err);
+    }
+  });
+});
+
+app.get('/user', (req, res) => {
+  console.log('/user');
+  db.query('select * from user', (err, data) => {
+    if (!err) {
+      console.log(data);
+      res.send(data); //응답을 클라이언트에 보낸다.
+    } else {
+      console.log(err);
+    }
+  });
+});
+
+app.get('/user/:id', (req, res) => {
+  console.log('/user/:id');
+  const id = req.params.id;
+  console.log(id); //3
+  db.query(`select * from user where id = ${id}`, (err, data) => {
+    if (!err) {
+      console.log(data);
+      res.send(data); //응답을 클라이언트에 보낸다.
+    } else {
+      console.log(err);
+    }
+  });
+});
+
+app.listen(PORT, () => {
+  console.log(`Server run : http://localhost:${PORT}/`);
+});
+
+// 디비에서 받아와서 하는 코드 작성해보기
+// 그 사이에 아래 더미데이터는 잠시 멈추어 두기
+/*
 const dummyData = [
   {
     id: 1,
@@ -582,39 +630,4 @@ const dummyData = [
     ],
   },
 ]
-
-// http://localhost:4000/ 으로 접속 시 응답메시지 출력
-app.get('/', (req, res) => {
-  res.send(dummyData)
-  //console.log('root');
-  // db.query('select * from user', (err, data) => {
-  //   if (!err) {
-  //     //console.log(data);
-  //     res.send(data); //응답을 클라이언트에 보낸다.
-  //   } else {
-  //     console.log(err);
-  //   }
-});
-
-app.get('/user', (req, res) => {
-  console.log('/user');
-  db.query('select * from user', (err, data) => {
-    if (!err) {
-      //console.log(data);
-      res.send(data); //응답을 클라이언트에 보낸다.
-    } else {
-      console.log(err);
-    }
-  });
-});
-
-app.get('/user/:id', (req, res) => {
-  console.log('/user/:id');
-  const id = req.params.id;
-  console.log(id); //3
-  //db.query작성하기
-});
-
-app.listen(PORT, () => {
-  console.log(`Server run : http://localhost:${PORT}/`);
-});
+*/

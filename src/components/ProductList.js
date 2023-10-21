@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { apiClient } from '../utils/apiClient';
-import '../../lib/styles/main.css';
+import '../lib/styles/main.css';
 import axios from 'axios';
 
 function ProductList() {
