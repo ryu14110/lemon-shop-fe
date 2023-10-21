@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import MainBar from '../components/ItemContent';
 
 export default function RegisterForm() {
@@ -20,7 +21,7 @@ export default function RegisterForm() {
   };
   return (
     <div>
-      <MainBar />
+      <Link to="/">Sticky lemon</Link>
       <form>
         <fieldset>
           <label htmlFor="email">Email</label>
@@ -32,6 +33,17 @@ export default function RegisterForm() {
             type="email"
             name="email"
             autoComplete="off"
+          />
+        </fieldset>
+        <fieldset>
+          <label>Password</label>
+          <input
+            placeholder="Enter Password"
+            required
+            ref={passwordRef}
+            id="password"
+            type="password"
+            name="password"
           />
         </fieldset>
         <fieldset>
