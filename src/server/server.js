@@ -7,6 +7,15 @@ const db = require('./config/db.js');
 
 //app.use(cors());
 
+//cors해결을 위한 코드
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'http://localhost:3000'); // 클라이언트 도메인
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  res.header('Access-Control-Allow-Credentials', 'true');
+  next();
+});
+
 // http://localhost:4000/ 으로 접속 시 응답메시지 출력
 app.get('/shopall', (req, res) => {
   //res.send(dummyData)

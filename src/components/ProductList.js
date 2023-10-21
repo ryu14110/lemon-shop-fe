@@ -4,7 +4,16 @@ import '../lib/styles/main.css';
 
 function ProductList() {
   //  서버와 통신
-  const [itemInfo, setItemInfo] = useState(null);
+  // const product = { id: 1, name: 'chodaegyun' };
+  // return (
+  //   <div key={product.id}>
+  //     <p>
+  //       {product.id} + {product.name}
+  //     </p>
+  //   </div>
+  // );
+
+  const [itemInfo, setItemInfo] = useState([{ id: 0, name: 'shopall' }]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -19,11 +28,11 @@ function ProductList() {
     fetchData();
   }, []);
 
-  console.log(itemInfo);
+  //console.log(itemInfo);
 
   return (
     <>
-      <body>
+      <div>
         {itemInfo && (
           <div className="products">
             <div>
@@ -44,7 +53,7 @@ function ProductList() {
             })}
           </div>
         )}
-      </body>
+      </div>
     </>
   );
 }
