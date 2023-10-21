@@ -1,9 +1,7 @@
-
-import { useEffect, useState } from "react";
-import { apiClient } from "../../utils/apiClient";
-import "../../lib/styles/main.css";
+import { useEffect, useState } from 'react';
+import { apiClient } from '../utils/apiClient';
+import '../../lib/styles/main.css';
 import axios from 'axios';
-
 
 function ProductList() {
   //  서버와 통신
@@ -22,7 +20,6 @@ function ProductList() {
     fetchData();
   }, []);
   // console.log(productList);
-
 
   return (
     <>
