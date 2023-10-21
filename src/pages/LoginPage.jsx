@@ -1,7 +1,8 @@
 import React, { useRef } from 'react';
-import MainBar from '../components/ItemContent';
+import { useNavigate } from 'react-router-dom';
 
-export default function RegisterForm() {
+export default function LoginForm() {
+  const navigate = useNavigate();
   const emailRef = useRef();
   const passwordRef = useRef();
 
@@ -11,21 +12,16 @@ export default function RegisterForm() {
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
 
-    const formData = {
-      email,
-      password,
-    };
-
-    onSubmit(formData);
+    navigate(`/detail?email=${email}&password=${password}`);
   };
+
   return (
     <div>
-      <MainBar />
       <form>
         <fieldset>
           <label htmlFor="email">Email</label>
           <input
-            placeholder="Enter Email."
+            placeholder="Enter email."
             required
             ref={emailRef}
             id="email"
@@ -35,17 +31,19 @@ export default function RegisterForm() {
           />
         </fieldset>
         <fieldset>
-          <label>Password</label>
+          <label htmlFor="password">Password</label>
           <input
-            placeholder="Enter Password"
             required
             ref={passwordRef}
             id="password"
             type="password"
             name="password"
+            placeholder="Enter password."
           />
         </fieldset>
-        <button onClick={submitForm}>Register</button>
+        <button type="submit" onClick={submitForm}>
+          Login
+        </button>
       </form>
     </div>
   );

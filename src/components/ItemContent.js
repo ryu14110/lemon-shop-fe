@@ -3,13 +3,12 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-
-import axios from "axios";
+import axios from 'axios';
 
 function App() {
   const selectItem = async () => {
     //async와 await로 비동기 지원
-    const result = await axios.get("/items/:itemId");
+    const result = await axios.get('/items/:itemId');
     //http://localhost:4000/items/:itemId인 서버에 데이터를 요청한다. 이 설정은 package.json의 proxy설정에 있음
     //요청한 데이터가 도착하면 result에 담는다.
     console.log(result);
@@ -17,9 +16,9 @@ function App() {
 
   return (
     //mainPage items 중에 클릭이 이루어지면
+    <div>item.</div>
   );
 }
-
 
 // // 상품 목록 호출 함수
 // const getMainBar = () => {
