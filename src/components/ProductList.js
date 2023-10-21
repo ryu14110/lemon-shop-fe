@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import { apiClient } from '../utils/apiClient';
 import '../lib/styles/main.css';
 
@@ -46,7 +47,9 @@ function ProductList() {
               return (
                 <div key={product.id}>
                   <p>
-                    {product.id} + {product.name}
+                    <Link to={`/items/${product.id}`}>
+                      {product.id} + {product.name}
+                    </Link>
                   </p>
                 </div>
               );

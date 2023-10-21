@@ -30,9 +30,23 @@ app.get('/shopall', (req, res) => {
   });
 });
 
+app.get('/items/:itemId', (req, res) => {
+  console.log('/items/:itemId');
+  const id = req.params.itemId;
+  console.log(id);
+  db.query(`select * from sticky_lemon.items where id = ${id}`, (err, data) => {
+    if (!err) {
+      console.log(data);
+      res.send(data); //응답을 클라이언트에 보낸다.
+    } else {
+      console.log(err);
+    }
+  });
+});
+
 app.get('/user', (req, res) => {
   console.log('/user');
-  db.query('select * from user', (err, data) => {
+  db.query('select * from sticky_lemon.user', (err, data) => {
     if (!err) {
       console.log(data);
       res.send(data); //응답을 클라이언트에 보낸다.
@@ -45,8 +59,8 @@ app.get('/user', (req, res) => {
 app.get('/user/:id', (req, res) => {
   console.log('/user/:id');
   const id = req.params.id;
-  console.log(id); //3
-  db.query(`select * from user where id = ${id}`, (err, data) => {
+  console.log(id);
+  db.query(`select * from sticky_lemon.user where id = ${id}`, (err, data) => {
     if (!err) {
       console.log(data);
       res.send(data); //응답을 클라이언트에 보낸다.
