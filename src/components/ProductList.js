@@ -53,7 +53,7 @@ function ProductList() {
                         alt={`${item.name}`}
                         style={{ width: '200px', height: '150' }}
                       />
-                      {item.name} + {item.description} + {item.price}
+                      {item.name}+{item.description}+{item.color}+{item.price}
                     </Link>
                   </p>
                 </div>

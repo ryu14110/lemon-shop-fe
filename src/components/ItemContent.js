@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { apiClient } from '../utils/apiClient';
 import '../lib/styles/main.css';
+import QuantityPicker from './QuantityPicker';
 
 function ItemContent() {
   const { itemId } = useParams();
@@ -43,7 +44,8 @@ function ItemContent() {
                       alt={`${item.name}`}
                       style={{ width: '200px', height: '150' }}
                     />
-                    {item.name} + {item.description} + {item.price}
+                    {item.name}+{item.description}+{item.color}+{item.price}
+                    <QuantityPicker />
                   </p>
                 </div>
               );
