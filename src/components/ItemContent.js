@@ -34,11 +34,16 @@ function ItemContent() {
                 </li>
               </ul>
             </div>
-            {itemInfo.map((product) => {
+            {itemInfo.map((item) => {
               return (
-                <div key={product.id}>
+                <div key={item.id}>
                   <p>
-                    {product.id} + {product.name}
+                    <img
+                      src={`/images/${item.id}.jpg`}
+                      alt={`${item.name}`}
+                      style={{ width: '200px', height: '150' }}
+                    />
+                    {item.name} + {item.description} + {item.price}
                   </p>
                 </div>
               );

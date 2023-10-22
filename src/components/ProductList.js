@@ -43,12 +43,17 @@ function ProductList() {
                 </li>
               </ul>
             </div>
-            {itemInfo.map((product) => {
+            {itemInfo.map((item) => {
               return (
-                <div key={product.id}>
+                <div key={item.id}>
                   <p>
-                    <Link to={`/items/${product.id}`}>
-                      {product.id} + {product.name}
+                    <Link to={`/items/${item.id}`}>
+                      <img
+                        src={`/images/${item.id}.jpg`}
+                        alt={`${item.name}`}
+                        style={{ width: '200px', height: '150' }}
+                      />
+                      {item.name} + {item.description} + {item.price}
                     </Link>
                   </p>
                 </div>

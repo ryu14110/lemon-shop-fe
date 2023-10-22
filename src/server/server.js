@@ -6,7 +6,7 @@ const db = require('./config/db.js');
 //const cors = require('cors');
 
 //app.use(cors());
-
+app.use(express.static('public'));
 //cors해결을 위한 코드
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', 'http://localhost:3000'); // 클라이언트 도메인
@@ -34,14 +34,17 @@ app.get('/items/:itemId', (req, res) => {
   console.log('/items/:itemId');
   const id = req.params.itemId;
   console.log(id);
-  db.query(`select * from sticky_lemon.items where id = ${id}`, (err, data) => {
-    if (!err) {
-      console.log(data);
-      res.send(data); //응답을 클라이언트에 보낸다.
-    } else {
-      console.log(err);
-    }
-  });
+  db.query(
+    `select * from sticky_lemon.items where id = '${id}'`,
+    (err, data) => {
+      if (!err) {
+        console.log(data);
+        res.send(data); //응답을 클라이언트에 보낸다.
+      } else {
+        console.log(err);
+      }
+    },
+  );
 });
 
 app.get('/user', (req, res) => {
