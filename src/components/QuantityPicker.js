@@ -33,9 +33,7 @@ const QuantityPicker = (item) => {
     setQuantity(Math.max(1, enteredQuantity));
   };
 
-  // const handleCart = () => {
-  //   alert(`선택된 수량: ${quantity}`);
-  // };
+  // post로 장바구니 정보 데이터 베이스에 구현하기
 
   return (
     <div>

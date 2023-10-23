@@ -1,10 +1,20 @@
 import { useSearchParams } from '../../node_modules/react-router-dom/dist/index';
 import { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import MainBar from '../components/MainBar';
 import Footer from '../components/Footer';
 import { apiClient } from '../utils/apiClient';
+import styled from 'styled-components';
 
 const CartPage = () => {
+  const SubmitButton = styled.button`
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+  `;
+
   const [searchParams] = useSearchParams();
   const queryItemId = searchParams.get('itemId');
   const queryItemQuantity = searchParams.get('itemQuantity');
@@ -50,6 +60,10 @@ const CartPage = () => {
           );
         })}
       </div>
+      <Link to={`/delivery`}>
+        {/*cartId를 쿼리 값으로 넣어서 delivery페이지 만들기 */}
+        <SubmitButton>ORDER</SubmitButton>
+      </Link>
       <Footer />
     </>
   );
