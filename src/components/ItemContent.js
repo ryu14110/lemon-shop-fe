@@ -73,7 +73,7 @@ export default function MainBar() {
         </OrderedList>
         <OrderedList>
           <li>
-            <StyledLink to="/items/:itemId">bags</StyledLink>
+            <StyledLink to="/category">bags</StyledLink>
           </li>
         </OrderedList>
         <OrderedList>

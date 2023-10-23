@@ -20,18 +20,6 @@ app.get('/user', (req, res) => {
     }
   });
 });
-app.get('/items/:category', (req, res) => {
-  console.log('/items/:category');
-  const id = req.params.category;
-  db.query(`select * from items where category=${id}`, (err, data) => {
-    if (!err) {
-      console.log(data);
-      res.send(data); //응답을 클라이언트에 보낸다.
-    } else {
-      console.log(err);
-    }
-  });
-});
 
 app.get('/user/:id', (req, res) => {
   console.log('/user/:id');

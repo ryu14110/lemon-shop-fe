@@ -10,27 +10,27 @@ import { Link } from 'react-router-dom';
 //   });
 // };
 
-function Dropdown() {
-  const [selectedValue, setSelectedValue] = useState(''); // State to store the selected value
+// function Dropdown() {
+//   const [selectedValue, setSelectedValue] = useState(''); // State to store the selected value
 
-  const handleSelectChange = (e) => {
-    setSelectedValue(e.target.value);
-  };
+//   const handleSelectChange = (e) => {
+//     setSelectedValue(e.target.value);
+//   };
 
-  return (
-    <div>
-      <select value={selectedValue} onChange={handleSelectChange}>
-        <option value="">Sign in</option>
-        <option value="option1">my orders</option>
-        <option value="option2">my addresses</option>
-        <option value="option3">my account</option>
-        <br />
-        <option value="option3">log out</option>
-      </select>
-      <p>Selected option: {selectedValue}</p>
-    </div>
-  );
-}
+//   return (
+//     <div>
+//       <select value={selectedValue} onChange={handleSelectChange}>
+//         <option value="">Sign in</option>
+//         <option value="option1">my orders</option>
+//         <option value="option2">my addresses</option>
+//         <option value="option3">my account</option>
+//         <br />
+//         <option value="option3">log out</option>
+//       </select>
+//       <p>Selected option: {selectedValue}</p>
+//     </div>
+//   );
+// }
 
 export default function MainBar() {
   return (
@@ -40,7 +40,7 @@ export default function MainBar() {
         <ButtonsStyle>
           <CartStyle to="/cart">shopping cart</CartStyle>
           <CartStyle to="/register">
-            <div>log in{/* <Dropdown /> */}</div>
+            <div>Sign up{/* <Dropdown /> */}</div>
           </CartStyle>
         </ButtonsStyle>
       </Container>

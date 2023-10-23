@@ -42,3 +42,10 @@ export const apiClient = async ({
 
   return result.data;
 };
+
+//CORS
+// app.enableCors({
+//   origin: true,
+//   methods: ['OPTIONS', 'GET', 'HEAD'],
+//   credentials: true,
+// });
