@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 
 const QuantityInputContainer = styled.div`
   display: flex;
@@ -24,11 +25,7 @@ const SubmitButton = styled.button`
   cursor: pointer;
 `;
 
-// const ResultContainer = styled.div`
-//   margin-top: 16px;
-// `;
-
-const QuantityPicker = () => {
+const QuantityPicker = (item) => {
   const [quantity, setQuantity] = useState(1);
 
   const handleQuantityChange = (event) => {
@@ -36,10 +33,9 @@ const QuantityPicker = () => {
     setQuantity(Math.max(1, enteredQuantity));
   };
 
-  const handleConfirm = () => {
-    //링크로 장바구니로 넘아가기 코딩하기
-    alert(`선택된 수량: ${quantity}`);
-  };
+  // const handleCart = () => {
+  //   alert(`선택된 수량: ${quantity}`);
+  // };
 
   return (
     <div>
@@ -53,10 +49,9 @@ const QuantityPicker = () => {
           onChange={handleQuantityChange}
         />
       </QuantityInputContainer>
-      <SubmitButton onClick={handleConfirm}>ADD</SubmitButton>
-      {/* <ResultContainer>
-        <p>선택된 수량: {quantity}</p>
-      </ResultContainer> */}
+      <Link to={`/cart/?itemId=${item.itemValue}&itemQuantity=${quantity}`}>
+        <SubmitButton>ADD</SubmitButton>
+      </Link>
     </div>
   );
 };
