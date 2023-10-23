@@ -40,7 +40,7 @@ function ItemContent() {
                 <div key={item.id}>
                   <p>
                     <img
-                      src={`/images/${item.id}.jpg`}
+                      src={`/images/${item.image}`}
                       alt={`${item.name}`}
                       style={{ width: '200px', height: '150' }}
                     />

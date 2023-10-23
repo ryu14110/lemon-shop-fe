@@ -20,7 +20,7 @@ app.use((req, res, next) => {
 app.get('/shopall', (req, res) => {
   //res.send(dummyData)
   console.log('root');
-  db.query('SELECT * FROM sticky_lemon.items', (err, data) => {
+  db.query('SELECT * FROM ICT_TEAM.items', (err, data) => {
     if (!err) {
       console.log(data);
       res.send(data); //응답을 클라이언트에 보낸다.
@@ -34,22 +34,19 @@ app.get('/items/:itemId', (req, res) => {
   console.log('/items/:itemId');
   const id = req.params.itemId;
   console.log(id);
-  db.query(
-    `select * from sticky_lemon.items where id = '${id}'`,
-    (err, data) => {
-      if (!err) {
-        console.log(data);
-        res.send(data); //응답을 클라이언트에 보낸다.
-      } else {
-        console.log(err);
-      }
-    },
-  );
+  db.query(`select * from ICT_TEAM.items where id = '${id}'`, (err, data) => {
+    if (!err) {
+      console.log(data);
+      res.send(data); //응답을 클라이언트에 보낸다.
+    } else {
+      console.log(err);
+    }
+  });
 });
 
 app.get('/user', (req, res) => {
   console.log('/user');
-  db.query('select * from sticky_lemon.user', (err, data) => {
+  db.query('select * from ICT_TEAM.user', (err, data) => {
     if (!err) {
       console.log(data);
       res.send(data); //응답을 클라이언트에 보낸다.
@@ -63,7 +60,7 @@ app.get('/user/:id', (req, res) => {
   console.log('/user/:id');
   const id = req.params.id;
   console.log(id);
-  db.query(`select * from sticky_lemon.user where id = ${id}`, (err, data) => {
+  db.query(`select * from ICT_TEAM.user where id = ${id}`, (err, data) => {
     if (!err) {
       console.log(data);
       res.send(data); //응답을 클라이언트에 보낸다.

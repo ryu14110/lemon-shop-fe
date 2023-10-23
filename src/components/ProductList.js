@@ -49,7 +49,7 @@ function ProductList() {
                   <p>
                     <Link to={`/items/${item.id}`}>
                       <img
-                        src={`/images/${item.id}.jpg`}
+                        src={`/images/${item.image}`}
                         alt={`${item.name}`}
                         style={{ width: '200px', height: '150' }}
                       />
