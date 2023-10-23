@@ -3,13 +3,14 @@ import { apiClient } from '../utils/apiClient';
 import '../styles/main.css';
 import Sidebar from './Sidebar';
 import { Link } from 'react-router-dom';
+import { dummyData } from '../sampleDB/sampleData';
 // import { useNavigate } from '../../node_modules/react-router-dom/dist/index';
 
 import axios from 'axios';
 
 function ProductList() {
   //  서버와 통신
-  const [itemInfo, setItemInfo] = useState(null);
+  const [itemInfo, setItemInfo] = useState(dummyData);
 
   useEffect(() => {
     const fetchData = async () => {

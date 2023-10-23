@@ -1,5 +1,7 @@
 import React, { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
 export default function LoginForm() {
   const navigate = useNavigate();
@@ -17,6 +19,7 @@ export default function LoginForm() {
 
   return (
     <div>
+      <MainStyle to="/">sticky lemon</MainStyle>
       <form>
         <fieldset>
           <label htmlFor="email">Email</label>
@@ -48,3 +51,13 @@ export default function LoginForm() {
     </div>
   );
 }
+
+const MainStyle = styled(Link)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: black;
+  font-size: 40px;
+  text-decoration: none;
+`;
