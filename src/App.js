@@ -18,6 +18,7 @@ const App = () => {
       <Route path="/?category={}" element={<ItemsPage />} />
       <Route path="/login" element={<LoginForm />} />
       <Route path="/register" element={<RegisterForm />} />
+      {/* <Route path="/welcom" element={<Welcome />} /> */}
       <Route path="/cart" element={<CartPage />} />
       <Route path="/delivery" element={<DeliveryPage />} />
     </Routes>

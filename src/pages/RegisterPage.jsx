@@ -1,19 +1,22 @@
-import React, { useRef } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 export default function LoginForm() {
-  const navigate = useNavigate();
-  const emailRef = useRef();
-  const passwordRef = useRef();
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+  });
 
-  const submitForm = (e) => {
-    e.preventDefault();
+  const history = useNavigate();
 
-    const email = emailRef.current.value;
-    const password = passwordRef.current.value;
-
-    navigate(`/detail?email=${email}&password=${password}`);
+  const handleRegister = async () => {
+    try {
+      await registerUser(formData);
+      history.push('/');
+    } catch (err) {
+      console.log('Registration failed: ', err);
+    }
   };
 
   return (
@@ -23,9 +26,12 @@ export default function LoginForm() {
         <fieldset>
           <label htmlFor="email">Email</label>
           <input
-            placeholder="Enter email."
+            placeholder="Enter your email"
             required
-            ref={emailRef}
+            value={formData.email}
+            onChange={(e) =>
+              setFormData({ ...formData, email: e.target.value })
+            }
             id="email"
             type="email"
             name="email"
@@ -36,14 +42,17 @@ export default function LoginForm() {
           <label htmlFor="password">Password</label>
           <input
             required
-            ref={passwordRef}
+            value={formData.password}
+            onChange={(e) =>
+              setFormData({ ...formData, password: e.target.value })
+            }
             id="password"
             type="password"
             name="password"
-            placeholder="Enter password."
+            placeholder="Enter your password"
           />
         </fieldset>
-        <button type="submit" onClick={submitForm}>
+        <button type="submit" onClick={handleRegister}>
           Register
         </button>
       </form>
