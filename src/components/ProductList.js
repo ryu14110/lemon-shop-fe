@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import { apiClient } from '../utils/apiClient';
-import '../lib/styles/main.css';
+import '../styles/main.css';
 
 function ProductList() {
   //  서버와 통신
