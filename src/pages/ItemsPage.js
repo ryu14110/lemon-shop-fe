@@ -1,18 +1,15 @@
-<<<<<<< HEAD
-import MainBar from "../components/MainBar";
-import ItemContent from "../components/MainBar";
+import MainBar from '../components/MainBar';
+import ItemContent from '../components/ItemContent';
+import Footer from '../components/Footer';
 
 const ItemsPage = () => {
   return (
     <div>
       <MainBar />
       <ItemContent />
+      <Footer />
     </div>
   );
-=======
-const ItemsPage = () => {
-  return <div>상세상품</div>;
->>>>>>> parent of 3366096 (folder modify 2)
 };
 
 export default ItemsPage;

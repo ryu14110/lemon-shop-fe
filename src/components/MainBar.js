@@ -1,10 +1,7 @@
 // import { apiClient } from "./utils/apiClient";
-<<<<<<< HEAD
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-=======
->>>>>>> parent of 3366096 (folder modify 2)
 
 // // 상품 목록 호출 함수
 // const getMainBar = () => {
@@ -13,7 +10,6 @@ import { Link } from 'react-router-dom';
 //   });
 // };
 
-<<<<<<< HEAD
 function Dropdown() {
   const [selectedValue, setSelectedValue] = useState(''); // State to store the selected value
 
@@ -133,23 +129,3 @@ const StyledLink = styled(Link)`
     color: #e4c6b0;
   }
 `;
-=======
-export default function MainBar() {
-  return (
-    <div>
-      <div>
-        <header>
-          free shipping above € 100 in the Netherlands
-          <button>shopping cart</button>
-          <button>sign in</button>
-        </header>
-      </div>
-      <h1>sticky lemon</h1>
-      <button>shop all</button>
-      <button>bags</button>
-      <button>footwear</button>
-      <button>accessories</button>
-    </div>
-  );
-}
->>>>>>> parent of 3366096 (folder modify 2)

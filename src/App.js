@@ -1,4 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 import CartPage from './pages/CartPage';
 import DeliveryPage from './pages/DeliveryPage';
 import ItemsPage from './pages/ItemsPage';
@@ -10,6 +12,7 @@ const App = () => {
   return (
     <Routes>
       <Route path="/" element={<MainPage />} />
+      <Route path="/shopall" element={<MainPage />} />
       <Route path="/items/:itemId" element={<ItemsPage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
@@ -18,4 +21,5 @@ const App = () => {
     </Routes>
   );
 };
+
 export default App;
