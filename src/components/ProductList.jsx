@@ -1,22 +1,26 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import { apiClient } from '../utils/apiClient';
 import '../styles/main.css';
-import Sidebar from './Sidebar';
-import { Link } from 'react-router-dom';
-import { dummyData } from '../sampleDB/sampleData';
-// import { useNavigate } from '../../node_modules/react-router-dom/dist/index';
-
-import axios from 'axios';
 
 function ProductList() {
   //  서버와 통신
-  const [itemInfo, setItemInfo] = useState(dummyData);
+  // const product = { id: 1, name: 'chodaegyun' };
+  // return (
+  //   <div key={product.id}>
+  //     <p>
+  //       {product.id} + {product.name}
+  //     </p>
+  //   </div>
+  // );
+
+  const [itemInfo, setItemInfo] = useState([{ id: 0, name: 'shopall' }]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const result = await axios.get('http://localhost:4000');
-        setItemInfo(result.data);
+        const result = await apiClient({ url: '/shopall' });
+        setItemInfo(result);
       } catch (error) {
         console.error('데이터를 가져오는 중 오류가 발생했습니다.');
       }
@@ -24,42 +28,40 @@ function ProductList() {
 
     fetchData();
   }, []);
-  // console.log(productList);
 
-  const [productList, setProductList] = useState(dummyData);
-
-  // const navigate = useNavigate();
-  // function handleClickItem(itemId) {
-  //   navigate(`/product?category=${groceries}`);
-  // }b0e35228df745e0bfe54:src/components/main/ProductList.js
+  //console.log(itemInfo);
 
   return (
     <>
-      <body>
+      <div>
         {itemInfo && (
           <div className="products">
-            <div className="categories">
-              Catergory
-              <Sidebar />
+            <div>
+              <ul>
+                <li>
+                  <button>shop all-sidebar</button>
+                </li>
+              </ul>
             </div>
-
-            {productList.map((product) => {
+            {itemInfo.map((item) => {
               return (
-                <div key={product.id}>
-                  <Link to={`/product/${product.id}`}>
-                    <img
-                      className="product"
-                      src={product.images[0]}
-                      alt={product.title}
-                    />
-                    <h2>{product.title}</h2>
-                  </Link>
+                <div key={item.id}>
+                  <p>
+                    <Link to={`/items/${item.id}`}>
+                      <img
+                        src={`/images/${item.image}`}
+                        alt={`${item.name}`}
+                        style={{ width: '200px', height: '150' }}
+                      />
+                      {item.name}+{item.description}+{item.color}+{item.price}
+                    </Link>
+                  </p>
                 </div>
               );
             })}
           </div>
         )}
-      </body>
+      </div>
     </>
   );
 }

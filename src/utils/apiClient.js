@@ -1,5 +1,6 @@
-import axios from "axios";
+import axios from 'axios';
 
+/*
 axios.interceptors.request.use(
   (config) => {
     return config;
@@ -17,13 +18,14 @@ axios.interceptors.response.use(
     return Promise.reject(error);
   }
 );
+*/
 
 export const apiClient = async ({
   url,
-  method = "GET",
+  method = 'GET',
   data = null,
   params = null,
-  baseURL = "http://localhost:4000",
+  baseURL = 'http://localhost:4000',
   headers,
   config,
   withCredentials = true,
