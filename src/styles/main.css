@@ -1,12 +1,35 @@
 .products {
   display: flex;
-  flex-wrap: wrap;
   gap: 10px;
+  flex-wrap: wrap;
+}
+.categories {
+  width: 150px;
+  height: 100%;
+  margin-top: 50px;
+  /* 카테고리를 한 컬럼으로 유지하면서 옆에 리스트가 
+  카테고리를 방해하지 않게 나오게 하고 싶은데 어떻게 할지? */
+}
+.orderlists {
+  list-style-type: none;
+}
+
+.listitems {
+  text-decoration: none;
+  color: black;
+
+  &:hover {
+    color: #acabab;
+  }
 }
 
 .product {
   width: 300px;
   height: 300px;
-  border: 1px solid black;
-  border-radius: 50%;
+  border-radius: 10px;
+  margin-top: 50px;
+
+  &:hover {
+    opacity: 0.9;
+  }
 }

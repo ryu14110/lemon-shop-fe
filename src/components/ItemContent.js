@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { apiClient } from '../utils/apiClient';
-import '../styles/main.css'
+import '../styles/main.css';
 import QuantityPicker from './QuantityPicker';
 
 function ItemContent() {

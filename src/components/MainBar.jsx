@@ -10,27 +10,27 @@ import { Link } from 'react-router-dom';
 //   });
 // };
 
-function Dropdown() {
-  const [selectedValue, setSelectedValue] = useState(''); // State to store the selected value
+// function Dropdown() {
+//   const [selectedValue, setSelectedValue] = useState(''); // State to store the selected value
 
-  const handleSelectChange = (e) => {
-    setSelectedValue(e.target.value);
-  };
+//   const handleSelectChange = (e) => {
+//     setSelectedValue(e.target.value);
+//   };
 
-  return (
-    <div>
-      <select value={selectedValue} onChange={handleSelectChange}>
-        <option value="">Sign in</option>
-        <option value="option1">my orders</option>
-        <option value="option2">my addresses</option>
-        <option value="option3">my account</option>
-        <br />
-        <option value="option3">log out</option>
-      </select>
-      <p>Selected option: {selectedValue}</p>
-    </div>
-  );
-}
+//   return (
+//     <div>
+//       <select value={selectedValue} onChange={handleSelectChange}>
+//         <option value="">Sign in</option>
+//         <option value="option1">my orders</option>
+//         <option value="option2">my addresses</option>
+//         <option value="option3">my account</option>
+//         <br />
+//         <option value="option3">log out</option>
+//       </select>
+//       <p>Selected option: {selectedValue}</p>
+//     </div>
+//   );
+// }
 
 export default function MainBar() {
   return (
@@ -39,11 +39,8 @@ export default function MainBar() {
         <HeaderStyle>free shipping above € 100 in the Netherlands</HeaderStyle>
         <ButtonsStyle>
           <CartStyle to="/cart">shopping cart</CartStyle>
-          <CartStyle to="register">
-            <div>
-              Log in
-              {/* <Dropdown /> */}
-            </div>
+          <CartStyle to="/register">
+            <div>Sign up{/* <Dropdown /> */}</div>
           </CartStyle>
         </ButtonsStyle>
       </Container>
@@ -56,17 +53,17 @@ export default function MainBar() {
         </OrderedList>
         <OrderedList>
           <li>
-            <StyledLink to="/items/:itemId">bags</StyledLink>
+            <StyledLink to="/?category=groceries">bags</StyledLink>
           </li>
         </OrderedList>
         <OrderedList>
           <li>
-            <StyledLink to="/items/:itemId">footwear</StyledLink>
+            <StyledLink to="/footwear">footwear</StyledLink>
           </li>
         </OrderedList>
         <OrderedList>
           <li>
-            <StyledLink to="/items/:itemId">accessories</StyledLink>
+            <StyledLink to="/Accessories">accessories</StyledLink>
           </li>
         </OrderedList>
       </NavStyle>
