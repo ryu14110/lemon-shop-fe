@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import { apiClient } from '../utils/apiClient';
 import '../styles/main.css';
+import Sidebar from './Sidebar';
 
 function ProductList() {
   //  서버와 통신
@@ -36,13 +37,7 @@ function ProductList() {
       <div>
         {itemInfo && (
           <div className="products">
-            <div>
-              <ul>
-                <li>
-                  <button>shop all-sidebar</button>
-                </li>
-              </ul>
-            </div>
+            <Sidebar />
             {itemInfo.map((item) => {
               return (
                 <div key={item.id}>

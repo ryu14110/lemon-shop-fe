@@ -17,7 +17,3 @@ export default function ProductDetail() {
     </div>
   );
 }
-
-// 둘중 하나 골라서 쓰기
-// ?category={}
-// /:category
