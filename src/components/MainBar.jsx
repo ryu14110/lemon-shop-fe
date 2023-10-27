@@ -39,6 +39,9 @@ export default function MainBar() {
         <HeaderStyle>free shipping above € 100 in the Netherlands</HeaderStyle>
         <ButtonsStyle>
           <CartStyle to="/cart">shopping cart</CartStyle>
+          <CartStyle to="/login">
+            <div>Log in</div>
+          </CartStyle>
           <CartStyle to="/register">
             <div>Sign up{/* <Dropdown /> */}</div>
           </CartStyle>
