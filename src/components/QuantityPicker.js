@@ -30,15 +30,11 @@ const QuantityPicker = (item) => {
 
       if (response.status === 200) {
         alert('카트에 담았습니다.');
-        navigate('/');
       } else {
-        // Handle other statuses or errors
-        const data = await response.json();
-        alert(data.message || 'Add cart failed!');
+        alert("카트에 담지 못했습니다.");
       }
     } catch (error) {
-      // error
-      console.log(error);
+      alert("카트에 담지 못했습니다.");
     }
   };
 

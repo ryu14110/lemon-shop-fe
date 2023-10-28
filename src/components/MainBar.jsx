@@ -19,7 +19,7 @@ export default function MainBar() {
       });
       setUserInfo(userInfoData);
     } catch (error) {
-      console.log(error);
+      setUserInfo({});
     }
   };
 
@@ -46,11 +46,16 @@ export default function MainBar() {
     }
   };
 
+  console.log(userInfo)
+  console.log(userInfo.email)
+
+  const isLogin = userInfo && userInfo.email;
+
   return (
     <Container>
       <LogoStyle to="/">STICKY LEMON</LogoStyle>
       <ButtonsStyle>
-        {userInfo ? (
+        {isLogin ? (
           <>
             <CartStyle to="/cart">CART</CartStyle>
             <CartStyle onClick={logout}>LOGOUT</CartStyle>
