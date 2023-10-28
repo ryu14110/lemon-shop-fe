@@ -26,25 +26,26 @@ function ItemContent() {
 
   return (
     <Container>
-      {itemInfo && itemInfo.map((item) => (
-        <ProductDetail key={item.id}>
-          {item.image && (
-            <ImageContainer>
-              <Image
-                src={`http://localhost:4000/images/${item.image}`}
-                alt={item.name}
-              />
-            </ImageContainer>
-          )}
-          <Info>
-            <Name>{item.name}</Name>
-            <Description>{item.description}</Description>
-            <Color>Color: {item.color}</Color>
-            <Price>${item.price}</Price>
-            <QuantityPicker itemValue={item.id} />
-          </Info>
-        </ProductDetail>
-      ))}
+      {itemInfo &&
+        itemInfo.map((item) => (
+          <ProductDetail key={item.id}>
+            {item.image && (
+              <ImageContainer>
+                <Image
+                  src={`http://localhost:4000/images/${item.image}`}
+                  alt={item.name}
+                />
+              </ImageContainer>
+            )}
+            <Info>
+              <Name>{item.name}</Name>
+              <Description>{item.description}</Description>
+              <Color>Color: {item.color}</Color>
+              <Price>${item.price}</Price>
+              <QuantityPicker itemValue={item.id} />
+            </Info>
+          </ProductDetail>
+        ))}
     </Container>
   );
 }
