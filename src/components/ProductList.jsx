@@ -19,12 +19,12 @@ function ProductList() {
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        const result = await apiClient({ url: '/shopall' });
-        setItemInfo(result);
-      } catch (error) {
-        console.error('데이터를 가져오는 중 오류가 발생했습니다.');
-      }
+      // try {
+      //   const result = await apiClient({ url: '/shopall' });
+      //   setItemInfo(result);
+      // } catch (error) {
+      //   console.error('데이터를 가져오는 중 오류가 발생했습니다.');
+      // }
     };
 
     fetchData();
@@ -42,14 +42,14 @@ function ProductList() {
               return (
                 <div key={item.id}>
                   <p>
-                    <Link to={`/items/${item.id}`}>
-                      <img
-                        src={`/images/${item.image}`}
-                        alt={`${item.name}`}
-                        style={{ width: '200px', height: '150' }}
-                      />
-                      {item.name}+{item.description}+{item.color}+{item.price}
-                    </Link>
+                    {/*<Link to={`/items/${item.id}`}>*/}
+                    {/*  <img*/}
+                    {/*    src={`/images/${item.image}`}*/}
+                    {/*    alt={`${item.name}`}*/}
+                    {/*    style={{ width: '200px', height: '150' }}*/}
+                    {/*  />*/}
+                    {/*  {item.name}+{item.description}+{item.color}+{item.price}*/}
+                    {/*</Link>*/}
                   </p>
                 </div>
               );

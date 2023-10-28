@@ -1,7 +1,8 @@
 // import { apiClient } from "./utils/apiClient";
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { apiClient } from '../utils/apiClient';
 
 // // 상품 목록 호출 함수
 // const getMainBar = () => {
@@ -33,15 +34,64 @@ import { Link } from 'react-router-dom';
 // }
 
 export default function MainBar() {
+  const navigate = useNavigate();
+
+  const [userInfo, setUserInfo] = useState({});
+
+  useEffect(() => {
+    getUserInfo();
+  }, []);
+
+  const getUserInfo = async () => {
+    try {
+      const userInfo = await apiClient({
+        url: '/userInfo',
+        credentials: true,
+        crossDomain: true,
+      });
+      setUserInfo(userInfo);
+    } catch (error) {
+      // error
+      console.log(error);
+    }
+  };
+
+  const logout = async () => {
+    try {
+      const response = await fetch("http://localhost:4000/logout", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+      });
+
+      if (response.status === 200) {
+        alert("로그아웃이 되었습니다.");
+        setUserInfo({  })
+        navigate("/");
+      } else {
+        // Handle other statuses or errors
+        const data = await response.json();
+        alert(data.message || "Logout failed!");
+      }
+    } catch (error) {
+      // error
+      console.log(error);
+    }
+  };
+
   return (
     <div>
       <Container>
         <HeaderStyle>free shipping above € 100 in the Netherlands</HeaderStyle>
         <ButtonsStyle>
           <CartStyle to="/cart">shopping cart</CartStyle>
-          <CartStyle to="/login">
-            <div>Log in</div>
-          </CartStyle>
+          {userInfo.email ? (
+            <CartStyle onClick={logout}>Log out</CartStyle>
+          ) : (
+            <CartStyle to="/login">Log in</CartStyle>
+          )}
           <CartStyle to="/register">
             <div>Sign up{/* <Dropdown /> */}</div>
           </CartStyle>
