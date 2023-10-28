@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { apiClient } from '../utils/apiClient';
 import '../styles/main.css';
-import Sidebar from './Sidebar';
 import styled from 'styled-components';
 
 export default function ProductList() {
-  const [itemInfo, setItemInfo] = useState([{ id: 0, name: 'shopall' }]);
+  const [items, setItems] = useState([]);
 
   useEffect(() => {
     fetchData();
@@ -15,7 +14,7 @@ export default function ProductList() {
   const fetchData = async () => {
     try {
       const result = await apiClient({ url: '/items' });
-      setItemInfo(result);
+      setItems(result);
     } catch (error) {
       console.error('데이터를 가져오는 중 오류가 발생했습니다.');
     }
@@ -24,7 +23,7 @@ export default function ProductList() {
   return (
     <ProductsContainer>
       <ProductsList>
-        {itemInfo.map((item) => (
+        {items.map((item) => (
           <ItemCard key={item.id}>
             <Link to={`/items/${item.id}`}>
               {item && item.image && (

@@ -7,7 +7,7 @@ import QuantityPicker from './QuantityPicker';
 
 function ItemContent() {
   const { itemId } = useParams();
-  const [itemInfo, setItemInfo] = useState([{ id: 0, name: 'item' }]);
+  const [item, setItem] = useState({});
 
   useEffect(() => {
     const itemUrl = `/items/${itemId}`;
@@ -15,7 +15,7 @@ function ItemContent() {
     const fetchData = async () => {
       try {
         const result = await apiClient({ url: `${itemUrl}` });
-        setItemInfo(result);
+        setItem(result);
       } catch (error) {
         console.error('데이터를 가져오는 중 오류가 발생했습니다.');
       }
@@ -26,26 +26,23 @@ function ItemContent() {
 
   return (
     <Container>
-      {itemInfo &&
-        itemInfo.map((item) => (
-          <ProductDetail key={item.id}>
-            {item.image && (
-              <ImageContainer>
-                <Image
-                  src={`http://localhost:4000/images/${item.image}`}
-                  alt={item.name}
-                />
-              </ImageContainer>
-            )}
-            <Info>
-              <Name>{item.name}</Name>
-              <Description>{item.description}</Description>
-              <Color>Color: {item.color}</Color>
-              <Price>${item.price}</Price>
-              <QuantityPicker itemValue={item.id} />
-            </Info>
-          </ProductDetail>
-        ))}
+      <ProductDetail key={item.id}>
+        {item.image && (
+          <ImageContainer>
+            <Image
+              src={`http://localhost:4000/images/${item.image}`}
+              alt={item.name}
+            />
+          </ImageContainer>
+        )}
+        <Info>
+          <Name>{item.name}</Name>
+          <Description>{item.description}</Description>
+          <Color>Color: {item.color}</Color>
+          <Price>${item.price}</Price>
+          <QuantityPicker itemValue={item.id} />
+        </Info>
+      </ProductDetail>
     </Container>
   );
 }
